@@ -8,3 +8,5 @@ American roulette uses a wheel with 38 pockets: 18 red, 18 black, and 2 green. T
 
 This code simulates a roulette game for 10000 times and see the simulated win rate and profit.
 
+## 2. Birthweight Hypothesis Testing
+The database contains demographical data of pregenant moms. This test compares the BMI of mothers that smoke and otherwise. Using a permutation test, we reject the null hypothesis and claims that there is a difference in BMI between smoker moms and non-smoker moms
