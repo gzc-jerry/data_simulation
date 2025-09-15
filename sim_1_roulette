@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib
-from matplotlib import pyplot as plt
+from matplotl/ib import pyplot as plt
 from collections import Counter
 
 p = 12/38 # Probability of winning on a single round
@@ -34,8 +34,8 @@ from collections import Counter
 sample = pd.Series(winning).sample(1000)
 sample_count = Counter(sample)
 prop_3_wins = sample_count[3] / len(sample)
-print("Result of 1000 samples:",prop_3_wins)
+print("Resulting probability of 1000 samples:",prop_3_wins)
 
 # Population Proportion
 previous_prop_3_wins = sum(winning == 3) / len(winning)
-print("Result of the previous question:", previous_prop_3_wins)
+print("Resulting probability of the population:", previous_prop_3_wins)
