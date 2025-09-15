@@ -8,7 +8,7 @@ from collections import Counter
 p = 12/38 # Probability of winning on a single round
 rounds = 3 # Number of rounds played
 
-# Function to simulate multiple three-games of roulette
+# Function to simulate multiple three-games of roulette and record the number of wins each time
 def wins_record(nsim):
     """Keeps track of the number of wins for three games of roulette"""
     outcome = []
