@@ -1,0 +1,41 @@
+# Roulette Simulation
+import pandas as pd
+import numpy as np
+import matplotlib
+from matplotlib import pyplot as plt
+from collections import Counter
+
+p = 12/38 # Probability of winning on a single round
+rounds = 3 # Number of rounds played
+
+# Function to simulate multiple three-games of roulette
+def wins_record(nsim):
+    """Keeps track of the number of wins for three games of roulette"""
+    outcome = []
+    for _ in np.arange(nsim):
+        wins = np.random.binomial(rounds, p, 1)[0]
+        outcome.append(wins)
+    return np.array(outcome)
+        
+winning = wins_record(100000)
+plt.hist(winning, bins=[-0.5, 0.5, 1.5, 2.5, 3.5], rwidth=0.8)
+plt.xticks([0, 1, 2, 3])
+plt.xlabel("Number of Wins")
+plt.ylabel("Frequency")
+plt.title("Histogram of Wins in 3 Games of Roulette")
+plt.show()
+
+
+'''
+Sample randomly from the simulation for 1,000 times and 
+calculate the proportion of times you win 3 times 
+'''
+from collections import Counter
+sample = pd.Series(winning).sample(1000)
+sample_count = Counter(sample)
+prop_3_wins = sample_count[3] / len(sample)
+print("Result of 1000 samples:",prop_3_wins)
+
+# Population Proportion
+previous_prop_3_wins = sum(winning == 3) / len(winning)
+print("Result of the previous question:", previous_prop_3_wins)
